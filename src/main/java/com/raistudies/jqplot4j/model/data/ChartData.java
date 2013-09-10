@@ -15,7 +15,7 @@ public class ChartData {
         return allSeriesData;
     }
     
-    public void addNewSeriesData(Object seriesData){
+    protected void addNewSeriesData(Object seriesData){
         allSeriesData.add(seriesData);
     }
     
