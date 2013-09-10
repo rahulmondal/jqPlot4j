@@ -9,12 +9,13 @@ public enum SeriesRanderer {
     BarRenderer("$.jqplot.BarRenderer"),
     BubbleRenderer("$.jqplot.BubbleRenderer"),
     PieRenderer("$.jqplot.PieRenderer"),
+    DonutRenderer("$.jqplot.DonutRenderer"),
     PyramidRenderer("$.jqplot.PyramidRenderer"),
     OHLCRenderer("$.jqplot.OHLCRenderer"),
     MekkoRenderer("$.jqplot.MekkoRenderer"),
     MeterGaugeRenderer("$.jqplot.MeterGaugeRenderer");
     
-    private String jsRanderer;
+    private final String jsRanderer;
 
     private SeriesRanderer(String jsRanderer) {
         this.jsRanderer = jsRanderer;
