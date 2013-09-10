@@ -1,6 +1,6 @@
 package com.raistudies.jqplot4j.model.configuration;
 
-import com.raistudies.jqplot4j.model.configuration.series.renderer.SeriesOptions;
+import com.raistudies.jqplot4j.model.configuration.series.SeriesOptions;
 import java.util.List;
 import java.util.Map;
 
