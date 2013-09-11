@@ -20,6 +20,7 @@ import com.raistudies.jqplot4j.model.configuration.series.marker.MarkerOptions;
 import com.raistudies.jqplot4j.model.configuration.series.marker.MarkerRanderer;
 import com.raistudies.jqplot4j.model.configuration.series.renderer.SeriesRanderer;
 import com.raistudies.jqplot4j.model.configuration.series.renderer.SeriesRandererOptions;
+import org.codehaus.jackson.annotate.JsonRawValue;
 
 /**
  *
@@ -43,8 +44,10 @@ public class SeriesOptions {
     private Boolean fillAndStroke;
     private String fillColor;
     private String fillAlpha;
+    @JsonRawValue
     private SeriesRanderer randerer;
     private SeriesRandererOptions rendererOptions;
+    @JsonRawValue
     private MarkerRanderer markerRenderer;
     private MarkerOptions markerOptions;
 

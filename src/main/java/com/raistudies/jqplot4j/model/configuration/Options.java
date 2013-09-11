@@ -19,6 +19,7 @@ package com.raistudies.jqplot4j.model.configuration;
 import com.raistudies.jqplot4j.model.configuration.series.SeriesOptions;
 import java.util.List;
 import java.util.Map;
+import org.codehaus.jackson.annotate.JsonRawValue;
 
 /**
  *
@@ -33,6 +34,7 @@ public class Options {
     private Boolean animate;
     private Boolean animateReplot;
     private Boolean captureRightClick;
+    @JsonRawValue
     private DataRanderer dataRenderer;
     private Map<String, Object> dataRendererOptions;
     private AxesOptions axesDefaults;
