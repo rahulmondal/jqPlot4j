@@ -101,4 +101,8 @@ public abstract class AbstractChartBuilder implements ChartBuilder{
         }
         yAxesTicks.add(tickValue);
     }
+    
+    public void animate(boolean animate){
+        chart.getOptions().setAnimate(animate);
+    }
 }

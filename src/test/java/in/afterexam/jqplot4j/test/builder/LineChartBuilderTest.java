@@ -38,18 +38,22 @@ public class LineChartBuilderTest {
         lineChartBuilder.getSeriesBuilder().addNewSeries();
         lineChartBuilder.getSeriesBuilder().addSeriesData(2.4);
         lineChartBuilder.getSeriesBuilder().addSeriesData(3.2);
+        lineChartBuilder.getSeriesBuilder().addSeriesData(5.9);
         
         lineChartBuilder.getSeriesBuilder().addNewSeries();
         lineChartBuilder.getSeriesBuilder().addSeriesData(5.1);
         lineChartBuilder.getSeriesBuilder().addSeriesData(4.7);
+        lineChartBuilder.getSeriesBuilder().addSeriesData(5.4);
         
         lineChartBuilder.addXAxesTick("Tick 1");
         lineChartBuilder.addXAxesTick("Tick 2");
+        lineChartBuilder.addXAxesTick("Tick 3");
         
         lineChartBuilder.setXAxisLebel("X-Axes");
         lineChartBuilder.setYAxisLebel("Y-Axis");
         lineChartBuilder.setXAxisRenderer(AxisRenderer.CategoryAxisRenderer);
         lineChartBuilder.makeSmooth();
+        lineChartBuilder.animate(true);
         
         Chart chart = lineChartBuilder.build();
         

@@ -26,25 +26,25 @@ import java.util.List;
  *
  * @author Rahul
  */
-public class LineAndBarSeriesBuilder extends AbstractSeriesBuilder {
+public class SimpleSeriesBuilder extends AbstractSeriesBuilder {
     
     private ChartType chartType;
 
-    public LineAndBarSeriesBuilder(ChartType chartType) {
+    public SimpleSeriesBuilder(ChartType chartType) {
         this.chartType = chartType;
     }
     
-    public LineAndBarSeriesBuilder addNewSeries(){
+    public SimpleSeriesBuilder addNewSeries(){
         chartData.getData().add(new ArrayList<Number>());
         return this;
     }
     
-    public LineAndBarSeriesBuilder addNewSeries(List<Number> seriesdata){
+    public SimpleSeriesBuilder addNewSeries(List<Number> seriesdata){
         chartData.getData().add(seriesdata);
         return this;
     }
     
-    public LineAndBarSeriesBuilder addSeriesData(Number value){
+    public SimpleSeriesBuilder addSeriesData(Number value){
         List<Object> allSeriesData = chartData.getData();
         assert allSeriesData.isEmpty() == false;
         ((ArrayList<Number>)allSeriesData.get(allSeriesData.size() - 1)).add(value);
@@ -59,7 +59,7 @@ public class LineAndBarSeriesBuilder extends AbstractSeriesBuilder {
         }
         return defaultOptions;
     }
-
+    
     public SeriesData build() {
         return chartData;
     }

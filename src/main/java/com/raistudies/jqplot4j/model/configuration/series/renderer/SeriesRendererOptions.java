@@ -21,5 +21,14 @@ package com.raistudies.jqplot4j.model.configuration.series.renderer;
  * @author Rahul
  */
 public class SeriesRendererOptions {
+    private AnimationOptions animation;
+
+    public AnimationOptions getAnimation() {
+        return animation;
+    }
+
+    public void setAnimation(AnimationOptions animation) {
+        this.animation = animation;
+    }
     
 }

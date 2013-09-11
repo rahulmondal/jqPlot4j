@@ -15,11 +15,9 @@
  */
 package com.raistudies.jqplot4j.builder;
 
-import com.raistudies.jqplot4j.builder.series.LineAndBarSeriesBuilder;
+import com.raistudies.jqplot4j.builder.series.LineSeriesBuilder;
 import com.raistudies.jqplot4j.chart.Chart;
-import com.raistudies.jqplot4j.chart.ChartType;
 import com.raistudies.jqplot4j.model.configuration.Options;
-import com.raistudies.jqplot4j.model.configuration.series.renderer.LineChatRendererOptions;
 import com.raistudies.jqplot4j.model.data.SeriesData;
 
 /**
@@ -28,29 +26,21 @@ import com.raistudies.jqplot4j.model.data.SeriesData;
  */
 public class LineChartBuilder extends AbstractChartBuilder implements ChartBuilder {
     
-    private LineAndBarSeriesBuilder seriesBuilder;
+    private LineSeriesBuilder seriesBuilder;
     
     public LineChartBuilder() {
         chart = new Chart();
         chart.setOptions(new Options());
-        seriesBuilder = new LineAndBarSeriesBuilder(ChartType.LINE);
+        seriesBuilder = new LineSeriesBuilder();
     }
     
-    public LineAndBarSeriesBuilder getSeriesBuilder() {
+    public LineSeriesBuilder getSeriesBuilder() {
         return seriesBuilder;
     }
     
-    protected LineChatRendererOptions getChartRendererOptions() {
-        LineChatRendererOptions chatRendererOptions = (LineChatRendererOptions) seriesBuilder.getSeriesDefaultOptions().getRendererOptions();
-        if (chatRendererOptions == null) {
-            chatRendererOptions = new LineChatRendererOptions();
-            seriesBuilder.getSeriesDefaultOptions().setRendererOptions(chatRendererOptions);
-        }
-        return chatRendererOptions;
-    }
-
+    
     public void makeSmooth() {
-        getChartRendererOptions().setSmooth(Boolean.TRUE);
+        seriesBuilder.makeSmooth();
     }
     
     public Chart build() {
