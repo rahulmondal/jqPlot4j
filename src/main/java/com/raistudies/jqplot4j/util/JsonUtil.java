@@ -27,7 +27,7 @@ import org.codehaus.jackson.map.annotate.JsonSerialize;
 public class JsonUtil {
 
     private static final ObjectWriter jsonWriter = new ObjectMapper()
-            .setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL)
+            .setSerializationInclusion(JsonSerialize.Inclusion.NON_DEFAULT)
             .writer();
 
     private static final ObjectWriter jsonWriterPretty = new ObjectMapper()

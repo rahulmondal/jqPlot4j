@@ -20,7 +20,7 @@ package com.raistudies.jqplot4j.model.configuration.series.renderer;
  *
  * @author Rahul
  */
-public class LineChatRandererOptions  extends SeriesRandererOptions {
+public class LineChatRendererOptions  extends SeriesRendererOptions {
     private Boolean smooth;
     private Boolean constrainSmoothing;
     private Double tension;

@@ -23,5 +23,5 @@ import com.raistudies.jqplot4j.model.data.SeriesData;
  * @author Rahul
  */
 public abstract class AbstractSeriesBuilder  implements SeriesBuilder {
-    protected SeriesData chartData;
+    protected SeriesData chartData = new SeriesData();
 }

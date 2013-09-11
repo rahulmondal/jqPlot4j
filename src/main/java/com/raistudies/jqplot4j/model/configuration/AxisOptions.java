@@ -18,12 +18,13 @@ package com.raistudies.jqplot4j.model.configuration;
 
 import java.util.List;
 import java.util.Map;
+import org.codehaus.jackson.annotate.JsonRawValue;
 
 /**
  *
  * @author Rahul
  */
-public class AxesOptions {
+public class AxisOptions {
     // whether or not to render the axis.  Determined automatically.
     private Boolean show;
     // maximum numerical value of the axis.  Determined automatically.
@@ -40,7 +41,8 @@ public class AxesOptions {
     private Integer numberTicks;
     
     // renderer to use to draw the axis
-    private AxesRanderer randerer;
+    @JsonRawValue
+    private AxisRenderer renderer;
     // options to pass to the renderer.
     private Map<String, Object> rendererOptions;
     // whether or not to show the tick labels
@@ -49,6 +51,8 @@ public class AxesOptions {
     private Boolean showTickMarks;
     
     private TickOptions tickOptions;
+    
+    private String label;
 
     public Boolean getShow() {
         return show;
@@ -98,12 +102,12 @@ public class AxesOptions {
         this.numberTicks = numberTicks;
     }
 
-    public AxesRanderer getRanderer() {
-        return randerer;
+    public AxisRenderer getRenderer() {
+        return renderer;
     }
 
-    public void setRanderer(AxesRanderer randerer) {
-        this.randerer = randerer;
+    public void setRenderer(AxisRenderer renderer) {
+        this.renderer = renderer;
     }
 
     public Map<String, Object> getRendererOptions() {
@@ -136,6 +140,14 @@ public class AxesOptions {
 
     public void setTickOptions(TickOptions tickOptions) {
         this.tickOptions = tickOptions;
+    }
+
+    public String getLabel() {
+        return label;
+    }
+
+    public void setLabel(String label) {
+        this.label = label;
     }
     
 }

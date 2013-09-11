@@ -13,27 +13,44 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.raistudies.jqplot4j.builder;
 
 import com.raistudies.jqplot4j.builder.series.LineAndBarSeriesBuilder;
 import com.raistudies.jqplot4j.chart.Chart;
 import com.raistudies.jqplot4j.chart.ChartType;
 import com.raistudies.jqplot4j.model.configuration.Options;
+import com.raistudies.jqplot4j.model.configuration.series.renderer.LineChatRendererOptions;
 import com.raistudies.jqplot4j.model.data.SeriesData;
 
 /**
  *
  * @author Rahul
  */
-public class LineChartBuilder extends AbstractChartBuilder implements ChartBuilder{
+public class LineChartBuilder extends AbstractChartBuilder implements ChartBuilder {
     
     private LineAndBarSeriesBuilder seriesBuilder;
-
+    
     public LineChartBuilder() {
         chart = new Chart();
         chart.setOptions(new Options());
         seriesBuilder = new LineAndBarSeriesBuilder(ChartType.LINE);
+    }
+    
+    public LineAndBarSeriesBuilder getSeriesBuilder() {
+        return seriesBuilder;
+    }
+    
+    protected LineChatRendererOptions getChartRendererOptions() {
+        LineChatRendererOptions chatRendererOptions = (LineChatRendererOptions) seriesBuilder.getSeriesDefaultOptions().getRendererOptions();
+        if (chatRendererOptions == null) {
+            chatRendererOptions = new LineChatRendererOptions();
+            seriesBuilder.getSeriesDefaultOptions().setRendererOptions(chatRendererOptions);
+        }
+        return chatRendererOptions;
+    }
+
+    public void makeSmooth() {
+        getChartRendererOptions().setSmooth(Boolean.TRUE);
     }
     
     public Chart build() {

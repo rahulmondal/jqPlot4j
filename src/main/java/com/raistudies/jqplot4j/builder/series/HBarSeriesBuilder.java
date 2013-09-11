@@ -19,7 +19,7 @@ package com.raistudies.jqplot4j.builder.series;
 import com.raistudies.jqplot4j.model.configuration.series.SeriesOptions;
 import com.raistudies.jqplot4j.model.configuration.series.renderer.BarChartRendererOptions;
 import com.raistudies.jqplot4j.model.configuration.series.renderer.BarDirection;
-import com.raistudies.jqplot4j.model.configuration.series.renderer.SeriesRanderer;
+import com.raistudies.jqplot4j.model.configuration.series.renderer.SeriesRenderer;
 import com.raistudies.jqplot4j.model.data.SeriesData;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,7 +37,7 @@ public class HBarSeriesBuilder extends AbstractSeriesBuilder {
 
     public HBarSeriesBuilder() {
         SeriesOptions seriesOptions = new SeriesOptions();
-        seriesOptions.setRanderer(SeriesRanderer.BarRenderer);
+        seriesOptions.setRenderer(SeriesRenderer.BarRenderer);
         
         BarChartRendererOptions rendererOptions = new BarChartRendererOptions();
         rendererOptions.setBarDirection(BarDirection.horizontal);

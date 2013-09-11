@@ -21,40 +21,40 @@ package com.raistudies.jqplot4j.model.configuration;
  * @author Rahul
  */
 public class Axes {
-    private AxesOptions xaxis;
-    private AxesOptions yaxis;
-    private AxesOptions x2axis;
-    private AxesOptions y2axis;
+    private AxisOptions xaxis;
+    private AxisOptions yaxis;
+    private AxisOptions x2axis;
+    private AxisOptions y2axis;
 
-    public AxesOptions getXaxis() {
+    public AxisOptions getXaxis() {
         return xaxis;
     }
 
-    public void setXaxis(AxesOptions xaxis) {
+    public void setXaxis(AxisOptions xaxis) {
         this.xaxis = xaxis;
     }
 
-    public AxesOptions getYaxis() {
+    public AxisOptions getYaxis() {
         return yaxis;
     }
 
-    public void setYaxis(AxesOptions yaxis) {
+    public void setYaxis(AxisOptions yaxis) {
         this.yaxis = yaxis;
     }
 
-    public AxesOptions getX2axis() {
+    public AxisOptions getX2axis() {
         return x2axis;
     }
 
-    public void setX2axis(AxesOptions x2axis) {
+    public void setX2axis(AxisOptions x2axis) {
         this.x2axis = x2axis;
     }
 
-    public AxesOptions getY2axis() {
+    public AxisOptions getY2axis() {
         return y2axis;
     }
 
-    public void setY2axis(AxesOptions y2axis) {
+    public void setY2axis(AxisOptions y2axis) {
         this.y2axis = y2axis;
     }
     

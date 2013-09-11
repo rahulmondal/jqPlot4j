@@ -35,9 +35,9 @@ public class Options {
     private Boolean animateReplot;
     private Boolean captureRightClick;
     @JsonRawValue
-    private DataRanderer dataRenderer;
+    private DataRenderer dataRenderer;
     private Map<String, Object> dataRendererOptions;
-    private AxesOptions axesDefaults;
+    private AxisOptions axesDefaults;
     private Axes axes;
     private SeriesOptions seriesDefaults;
     private List<SeriesOptions> series;
@@ -108,11 +108,11 @@ public class Options {
         this.captureRightClick = captureRightClick;
     }
 
-    public DataRanderer getDataRenderer() {
+    public DataRenderer getDataRenderer() {
         return dataRenderer;
     }
 
-    public void setDataRenderer(DataRanderer dataRenderer) {
+    public void setDataRenderer(DataRenderer dataRenderer) {
         this.dataRenderer = dataRenderer;
     }
 
@@ -124,11 +124,11 @@ public class Options {
         this.dataRendererOptions = dataRendererOptions;
     }
 
-    public AxesOptions getAxesDefaults() {
+    public AxisOptions getAxesDefaults() {
         return axesDefaults;
     }
 
-    public void setAxesDefaults(AxesOptions axesDefaults) {
+    public void setAxesDefaults(AxisOptions axesDefaults) {
         this.axesDefaults = axesDefaults;
     }
 

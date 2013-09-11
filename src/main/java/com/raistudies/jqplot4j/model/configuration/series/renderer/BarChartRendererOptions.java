@@ -22,7 +22,7 @@ import java.util.List;
  *
  * @author Rahul
  */
-public class BarChartRendererOptions extends SeriesRandererOptions {
+public class BarChartRendererOptions extends SeriesRendererOptions {
     private Integer barPadding;
     private Integer barMargin;
     private BarDirection barDirection;

@@ -17,9 +17,9 @@
 package com.raistudies.jqplot4j.model.configuration.series;
 
 import com.raistudies.jqplot4j.model.configuration.series.marker.MarkerOptions;
-import com.raistudies.jqplot4j.model.configuration.series.marker.MarkerRanderer;
-import com.raistudies.jqplot4j.model.configuration.series.renderer.SeriesRanderer;
-import com.raistudies.jqplot4j.model.configuration.series.renderer.SeriesRandererOptions;
+import com.raistudies.jqplot4j.model.configuration.series.marker.MarkerRenderer;
+import com.raistudies.jqplot4j.model.configuration.series.renderer.SeriesRenderer;
+import com.raistudies.jqplot4j.model.configuration.series.renderer.SeriesRendererOptions;
 import org.codehaus.jackson.annotate.JsonRawValue;
 
 /**
@@ -45,10 +45,10 @@ public class SeriesOptions {
     private String fillColor;
     private String fillAlpha;
     @JsonRawValue
-    private SeriesRanderer randerer;
-    private SeriesRandererOptions rendererOptions;
+    private SeriesRenderer renderer;
+    private SeriesRendererOptions rendererOptions;
     @JsonRawValue
-    private MarkerRanderer markerRenderer;
+    private MarkerRenderer markerRenderer;
     private MarkerOptions markerOptions;
 
     public Boolean getShow() {
@@ -187,27 +187,27 @@ public class SeriesOptions {
         this.fillAlpha = fillAlpha;
     }
 
-    public SeriesRanderer getRanderer() {
-        return randerer;
+    public SeriesRenderer getRenderer() {
+        return renderer;
     }
 
-    public void setRanderer(SeriesRanderer randerer) {
-        this.randerer = randerer;
+    public void setRenderer(SeriesRenderer renderer) {
+        this.renderer = renderer;
     }
 
-    public SeriesRandererOptions getRendererOptions() {
+    public SeriesRendererOptions getRendererOptions() {
         return rendererOptions;
     }
 
-    public void setRendererOptions(SeriesRandererOptions rendererOptions) {
+    public void setRendererOptions(SeriesRendererOptions rendererOptions) {
         this.rendererOptions = rendererOptions;
     }
 
-    public MarkerRanderer getMarkerRenderer() {
+    public MarkerRenderer getMarkerRenderer() {
         return markerRenderer;
     }
 
-    public void setMarkerRenderer(MarkerRanderer markerRenderer) {
+    public void setMarkerRenderer(MarkerRenderer markerRenderer) {
         this.markerRenderer = markerRenderer;
     }
 

@@ -14,12 +14,23 @@
  * limitations under the License.
  */
 
-package com.raistudies.jqplot4j.model.configuration.series.marker;
+package com.raistudies.jqplot4j.model.configuration;
 
 /**
  *
  * @author Rahul
  */
-public enum MarkerRanderer {
+public enum DataRenderer {
+    BarRenderer("$.jqplot.BarRenderer");
+    
+    private String jsRenderer;
+
+    private DataRenderer(String jsRenderer) {
+        this.jsRenderer = jsRenderer;
+    }
+
+    public String getJsRenderer() {
+        return jsRenderer;
+    }
     
 }

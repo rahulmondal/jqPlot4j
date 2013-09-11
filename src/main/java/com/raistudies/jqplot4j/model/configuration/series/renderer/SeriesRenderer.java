@@ -20,6 +20,24 @@ package com.raistudies.jqplot4j.model.configuration.series.renderer;
  *
  * @author Rahul
  */
-public class SeriesRandererOptions {
+public enum SeriesRenderer {
     
+    BarRenderer("$.jqplot.BarRenderer"),
+    BubbleRenderer("$.jqplot.BubbleRenderer"),
+    PieRenderer("$.jqplot.PieRenderer"),
+    DonutRenderer("$.jqplot.DonutRenderer"),
+    PyramidRenderer("$.jqplot.PyramidRenderer"),
+    OHLCRenderer("$.jqplot.OHLCRenderer"),
+    MekkoRenderer("$.jqplot.MekkoRenderer"),
+    MeterGaugeRenderer("$.jqplot.MeterGaugeRenderer");
+    
+    private final String jsRenderer;
+
+    private SeriesRenderer(String jsRenderer) {
+        this.jsRenderer = jsRenderer;
+    }
+
+    public String getJsRenderer() {
+        return jsRenderer;
+    }
 }

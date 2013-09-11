@@ -20,17 +20,28 @@ package com.raistudies.jqplot4j.model.configuration;
  *
  * @author Rahul
  */
-public enum DataRanderer {
-    BarRenderer("$.jqplot.BarRenderer");
+public enum AxisRenderer {
+    LinearAxisRenderer("$.jqplot.LinearAxisRenderer"),
+    DateAxisRenderer("$.jqplot.DateAxisRenderer"),
+    CanvasAxisLabelRenderer("$.jqplot.CanvasAxisLabelRenderer"),
+    CategoryAxisRenderer("$.jqplot.CategoryAxisRenderer"),
+    CanvasAxisTickRenderer("$.jqplot.CanvasAxisTickRenderer"),
+    LogAxisRenderer("$.jqplot.LogAxisRenderer"),
+    MekkoAxisRenderer("$.jqplot.MekkoAxisRenderer");
     
-    private String jsRanderer;
+    private String jsRenderer;
 
-    private DataRanderer(String jsRanderer) {
-        this.jsRanderer = jsRanderer;
+    private AxisRenderer(String jsRenderer) {
+        this.jsRenderer = jsRenderer;
     }
 
-    public String getJsRanderer() {
-        return jsRanderer;
+    public String getJsRenderer() {
+        return jsRenderer;
+    }
+
+    @Override
+    public String toString() {
+        return jsRenderer;
     }
     
 }
