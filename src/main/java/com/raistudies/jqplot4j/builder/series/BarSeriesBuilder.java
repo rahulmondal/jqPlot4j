@@ -17,6 +17,7 @@ package com.raistudies.jqplot4j.builder.series;
 
 import com.raistudies.jqplot4j.chart.ChartType;
 import com.raistudies.jqplot4j.model.configuration.series.renderer.BarChartRendererOptions;
+import com.raistudies.jqplot4j.model.configuration.series.renderer.SeriesRenderer;
 
 /**
  *
@@ -26,6 +27,7 @@ public class BarSeriesBuilder extends SimpleSeriesBuilder{
 
     public BarSeriesBuilder() {
         super(ChartType.BAR);
+        getSeriesDefaultOptions().setRenderer(SeriesRenderer.BarRenderer);
     }
     
     protected BarChartRendererOptions getChartRendererOptions() {

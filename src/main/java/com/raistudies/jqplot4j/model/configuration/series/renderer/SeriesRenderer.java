@@ -40,4 +40,10 @@ public enum SeriesRenderer {
     public String getJsRenderer() {
         return jsRenderer;
     }
+
+    @Override
+    public String toString() {
+        return jsRenderer;
+    }
+    
 }

@@ -21,6 +21,7 @@ import com.raistudies.jqplot4j.model.configuration.Axes;
 import com.raistudies.jqplot4j.model.configuration.AxisOptions;
 import com.raistudies.jqplot4j.model.configuration.AxisRenderer;
 import com.raistudies.jqplot4j.model.configuration.Options;
+import com.raistudies.jqplot4j.model.configuration.TickOptions;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,6 +58,26 @@ public abstract class AbstractChartBuilder implements ChartBuilder{
         return xAxesOptions;
     }
     
+    protected TickOptions getXAxisTickOptions(){
+        AxisOptions xAxesOptions = getXAxesOptions();
+        TickOptions tickOptions = xAxesOptions.getTickOptions();
+        if(tickOptions == null){
+            tickOptions = new TickOptions();
+            xAxesOptions.setTickOptions(tickOptions);
+        }
+        return tickOptions;
+    }
+    
+    protected TickOptions getYAxisTickOptions(){
+        AxisOptions yAxesOptions = getYAxesOptions();
+        TickOptions tickOptions = yAxesOptions.getTickOptions();
+        if(tickOptions == null){
+            tickOptions = new TickOptions();
+            yAxesOptions.setTickOptions(tickOptions);
+        }
+        return tickOptions;
+    }
+    
     protected AxisOptions getYAxesOptions(){
         Axes axes = getAxes();
         AxisOptions yAxesOptions = axes.getYaxis();
@@ -69,6 +90,14 @@ public abstract class AbstractChartBuilder implements ChartBuilder{
     
     public void setXAxisLebel(String lebel){
         getXAxesOptions().setLabel(lebel);
+    }
+    
+    public void setXAxisValueFormat(String formatString){
+        getXAxisTickOptions().setFormatString(formatString);
+    }
+    
+    public void setYAxisValueFormat(String formatString){
+        getYAxisTickOptions().setFormatString(formatString);
     }
     
     public void setYAxisLebel(String lebel){
