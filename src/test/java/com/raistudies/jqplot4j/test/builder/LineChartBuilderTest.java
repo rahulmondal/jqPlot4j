@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package in.afterexam.jqplot4j.test.builder;
+package com.raistudies.jqplot4j.test.builder;
 
 import com.raistudies.jqplot4j.builder.ChartBuilderFactory;
 import com.raistudies.jqplot4j.builder.LineChartBuilder;

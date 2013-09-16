@@ -25,6 +25,8 @@ import com.raistudies.jqplot4j.chart.ChartType;
 public class ChartBuilderFactory {
     public static ChartBuilder get(ChartType chartType){
         switch(chartType){
+            case BAR:
+                return new BarChartBuilder();
             default:
                 return new LineChartBuilder();
         }

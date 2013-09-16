@@ -16,6 +16,7 @@
 
 package com.raistudies.jqplot4j.builder;
 
+import com.raistudies.jqplot4j.builder.series.SeriesBuilder;
 import com.raistudies.jqplot4j.chart.Chart;
 
 /**
@@ -24,5 +25,6 @@ import com.raistudies.jqplot4j.chart.Chart;
  */
 public interface ChartBuilder {
 
+    public SeriesBuilder getSeriesBuilder();
     public Chart build();
 }

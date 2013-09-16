@@ -20,6 +20,7 @@ import com.raistudies.jqplot4j.chart.Chart;
 import com.raistudies.jqplot4j.model.configuration.Axes;
 import com.raistudies.jqplot4j.model.configuration.AxisOptions;
 import com.raistudies.jqplot4j.model.configuration.AxisRenderer;
+import com.raistudies.jqplot4j.model.configuration.Options;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -30,7 +31,12 @@ import java.util.List;
 public abstract class AbstractChartBuilder implements ChartBuilder{
     
     protected Chart chart;
-    
+
+    public AbstractChartBuilder() {
+        chart = new Chart();
+        chart.setOptions(new Options());
+    }
+        
     protected Axes getAxes(){
         Axes axes = chart.getOptions().getAxes();
         if(axes == null){

@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 @ www.raistudies.com.
+ * Copyright 2013 Rahul.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package com.raistudies.jqplot4j.builder;
 
-import com.raistudies.jqplot4j.builder.series.LineSeriesBuilder;
+import com.raistudies.jqplot4j.builder.series.BarSeriesBuilder;
 import com.raistudies.jqplot4j.chart.Chart;
 import com.raistudies.jqplot4j.model.data.SeriesData;
 
@@ -23,28 +23,25 @@ import com.raistudies.jqplot4j.model.data.SeriesData;
  *
  * @author Rahul
  */
-public class LineChartBuilder extends AbstractChartBuilder implements ChartBuilder {
+public class BarChartBuilder extends AbstractChartBuilder implements ChartBuilder {
     
-    private LineSeriesBuilder seriesBuilder;
-    
-    public LineChartBuilder() {
+    private BarSeriesBuilder seriesBuilder;
+
+    public BarChartBuilder() {
         super();
-        seriesBuilder = new LineSeriesBuilder();
+        seriesBuilder = new BarSeriesBuilder();
     }
     
-    public LineSeriesBuilder getSeriesBuilder() {
-        return seriesBuilder;
-    }
-    
-    
-    public void makeSmooth() {
-        seriesBuilder.makeSmooth();
-    }
-    
+
     public Chart build() {
         SeriesData seriesData = seriesBuilder.build();
         chart.setChartData(seriesData.getData());
         chart.getOptions().setSeriesDefaults(seriesData.getSeriesOptions());
         return chart;
     }
+
+    public BarSeriesBuilder getSeriesBuilder() {
+        return seriesBuilder;
+    }
+    
 }
