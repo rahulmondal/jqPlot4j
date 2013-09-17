@@ -27,6 +27,8 @@ public class ChartBuilderFactory {
         switch(chartType){
             case BAR:
                 return new BarChartBuilder();
+            case HBAR:
+                return new HBarChartBuilder();
             default:
                 return new LineChartBuilder();
         }

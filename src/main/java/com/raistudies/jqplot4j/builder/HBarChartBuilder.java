@@ -15,7 +15,7 @@
  */
 package com.raistudies.jqplot4j.builder;
 
-import com.raistudies.jqplot4j.builder.series.BarSeriesBuilder;
+import com.raistudies.jqplot4j.builder.series.HBarSeriesBuilder;
 import com.raistudies.jqplot4j.chart.Chart;
 import com.raistudies.jqplot4j.model.data.SeriesData;
 
@@ -23,25 +23,24 @@ import com.raistudies.jqplot4j.model.data.SeriesData;
  *
  * @author Rahul
  */
-public class BarChartBuilder extends AbstractChartBuilder implements ChartBuilder {
+public class HBarChartBuilder extends AbstractChartBuilder implements ChartBuilder {
     
-    private BarSeriesBuilder seriesBuilder;
+    private final HBarSeriesBuilder seriesBuilder;
 
-    public BarChartBuilder() {
+    public HBarChartBuilder() {
         super();
-        seriesBuilder = new BarSeriesBuilder();
+        seriesBuilder = new HBarSeriesBuilder();
     }
     
+    public HBarSeriesBuilder getSeriesBuilder() {
+        return seriesBuilder;
+    }
 
     public Chart build() {
         SeriesData seriesData = seriesBuilder.build();
         chart.setChartData(seriesData.getData());
         chart.getOptions().setSeriesDefaults(seriesData.getSeriesOptions());
         return chart;
-    }
-
-    public BarSeriesBuilder getSeriesBuilder() {
-        return seriesBuilder;
     }
     
 }

@@ -22,6 +22,7 @@ import com.raistudies.jqplot4j.model.configuration.series.renderer.BarDirection;
 import com.raistudies.jqplot4j.model.configuration.series.renderer.SeriesRenderer;
 import com.raistudies.jqplot4j.model.data.SeriesData;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -44,19 +45,10 @@ public class HBarSeriesBuilder extends AbstractSeriesBuilder {
         seriesOptions.setRendererOptions(rendererOptions);
         
         this.chartData.setSeriesOptions(seriesOptions);
+        this.xAxisValues = new HashMap<String, List<Number>>();
+        this.yAxisValues = new ArrayList<String>();
     }
     
-    public HBarSeriesBuilder addYAxisValue(String yAxisValue, List<Number> xAxisValues) {
-        this.yAxisValues.add(yAxisValue);
-        if (xAxisValues == null) {
-            this.xAxisValues.put(yAxisValue, new ArrayList<Number>());
-
-        } else {
-            this.xAxisValues.put(yAxisValue, xAxisValues);
-        }
-        return this;
-    }
-
     public HBarSeriesBuilder addXValue(String yAxisValue, Number xAxisValue) {
         if (this.xAxisValues.get(yAxisValue) == null) {
             this.yAxisValues.add(yAxisValue);
@@ -97,8 +89,9 @@ public class HBarSeriesBuilder extends AbstractSeriesBuilder {
             int count = 0;
             for (Map.Entry<String, List<Number>> entry : xAxisValues.entrySet()) {
                 series.add(new ArrayList<Object>());
-                series.get(count).add(entry.getKey());
                 series.get(count).add(entry.getValue().get(i));
+                series.get(count).add(entry.getKey());                
+                count++;
             }
         }
         return chartData;

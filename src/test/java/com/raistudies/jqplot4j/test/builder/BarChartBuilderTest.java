@@ -18,7 +18,6 @@ package com.raistudies.jqplot4j.test.builder;
 
 import com.raistudies.jqplot4j.builder.BarChartBuilder;
 import com.raistudies.jqplot4j.builder.ChartBuilderFactory;
-import com.raistudies.jqplot4j.builder.LineChartBuilder;
 import com.raistudies.jqplot4j.chart.Chart;
 import com.raistudies.jqplot4j.chart.ChartType;
 import com.raistudies.jqplot4j.model.configuration.AxisRenderer;

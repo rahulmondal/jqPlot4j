@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 @ www.raistudies.com.
+ * Copyright 2013 @ www.raistudies.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -106,6 +106,10 @@ public abstract class AbstractChartBuilder implements ChartBuilder{
     
     public void setXAxisRenderer(AxisRenderer axesRenderer){
         getXAxesOptions().setRenderer(axesRenderer);
+    }
+    
+    public void setYAxisRenderer(AxisRenderer axesRenderer){
+        getYAxesOptions().setRenderer(axesRenderer);
     }
     
     public void setAxesRenderer(AxisRenderer axesRenderer){
