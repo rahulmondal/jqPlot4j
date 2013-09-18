@@ -16,6 +16,8 @@
 
 package com.raistudies.jqplot4j.builder.series;
 
+import com.raistudies.jqplot4j.model.configuration.series.renderer.PieChartRendererOptions;
+import com.raistudies.jqplot4j.model.configuration.series.renderer.SeriesRenderer;
 import com.raistudies.jqplot4j.model.data.SeriesData;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +27,12 @@ import java.util.List;
  * @author Rahul
  */
 public class PieSeriesBuilder extends AbstractSeriesBuilder {
+
+    public PieSeriesBuilder() {
+        super();
+        getSeriesDefaultOptions().setRenderer(SeriesRenderer.PieRenderer);
+    }
+    
     
     public PieSeriesBuilder addNewSeriesData(String level, Number value) {
         List element = new ArrayList();
@@ -32,6 +40,15 @@ public class PieSeriesBuilder extends AbstractSeriesBuilder {
         element.add(value);
         chartData.addNewSeriesData(element);
         return this;
+    }
+    
+    public PieChartRendererOptions getChartRendererOptions(){
+        PieChartRendererOptions chatRendererOptions = (PieChartRendererOptions) getSeriesDefaultOptions().getRendererOptions();
+        if (chatRendererOptions == null) {
+            chatRendererOptions = new PieChartRendererOptions();
+            getSeriesDefaultOptions().setRendererOptions(chatRendererOptions);
+        }
+        return chatRendererOptions;
     }
     
     public SeriesData build(){

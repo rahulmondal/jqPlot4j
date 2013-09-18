@@ -16,6 +16,7 @@
 
 package com.raistudies.jqplot4j.builder.series;
 
+import com.raistudies.jqplot4j.model.configuration.series.SeriesOptions;
 import com.raistudies.jqplot4j.model.data.SeriesData;
 
 /**
@@ -24,4 +25,13 @@ import com.raistudies.jqplot4j.model.data.SeriesData;
  */
 public abstract class AbstractSeriesBuilder  implements SeriesBuilder {
     protected SeriesData chartData = new SeriesData();
+    
+    public SeriesOptions getSeriesDefaultOptions(){
+        SeriesOptions defaultOptions = chartData.getSeriesOptions();
+        if(defaultOptions == null){
+            defaultOptions = new SeriesOptions();
+            chartData.setSeriesOptions(defaultOptions);
+        }
+        return defaultOptions;
+    }
 }

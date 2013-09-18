@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 @ www.raistudies.com.
+ * Copyright 2013 @ www.raistudies.com
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import java.util.List;
  *
  * @author Rahul
  */
-public class PieChartRendererOptions {
+public class PieChartRendererOptions extends SeriesRendererOptions {
 
     private Number diameter;
     private Integer padding;

@@ -29,6 +29,8 @@ public class ChartBuilderFactory {
                 return new BarChartBuilder();
             case HBAR:
                 return new HBarChartBuilder();
+            case PIE:
+                return new PieChartBuilder();
             default:
                 return new LineChartBuilder();
         }
